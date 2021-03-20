@@ -22,21 +22,13 @@ class _MyAppState extends State<MyApp> {
       ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-            Image.asset('assets/linux_PNG29.png', fit: BoxFit.fill, height: 50,),
-            Text('Controller'),
-          ],),
-          centerTitle: true,
-        ),
+
         body: Center(
           child: Container(
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.fromLTRB(15,45,15,10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -45,7 +37,7 @@ class _MyAppState extends State<MyApp> {
                     ],
                   ),
                 ),
-                Padding(padding: const EdgeInsets.fromLTRB(15,0,15,0),
+                Padding(padding: const EdgeInsets.fromLTRB(15,10,15,10),
                   child: Divider(
                     color: Colors.white,
                   ),
@@ -64,11 +56,6 @@ class _MyAppState extends State<MyApp> {
                     ],
                   ),
                 ),
-                Padding(padding: const EdgeInsets.fromLTRB(15,0,15,0),
-                  child: Divider(
-                    color: Colors.white,
-                  ),
-                ),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
@@ -83,7 +70,7 @@ class _MyAppState extends State<MyApp> {
                     ],
                   ),
                 ),
-                Padding(padding: const EdgeInsets.fromLTRB(15,0,15,0),
+                Padding(padding: const EdgeInsets.fromLTRB(15,10,15,10),
                   child: Divider(
                     color: Colors.white,
                   ),
@@ -121,6 +108,16 @@ class _MyAppState extends State<MyApp> {
                   child: Divider(
                     color: Colors.white,
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                  RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.music_off), label: Text('')),
+                  RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.headset ), label: Text('')),
+                  RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.settings_rounded), label: Text('')),
+                  ]),
                 ),
               ],
             ),
