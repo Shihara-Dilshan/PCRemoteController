@@ -1,7 +1,7 @@
 import subprocess;
 
 try:
-  subprocess.Popen(['playerctl',  'play'])
+  subprocess.Popen(['shutdown',  'now'])
   print(200)
 except:
   print(500) 

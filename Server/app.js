@@ -13,4 +13,13 @@ app.get( '/play', (req, res) => {
 	  // results is an array consisting of messages collected during execution
 	     res.send(results);
 	});
+});
+
+
+app.get( '/pause', (req, res) => {
+	PythonShell.run('scripts/pause.py', null, function (err, results) {
+	  if (err) throw err;
+	  // results is an array consisting of messages collected during execution
+	     res.send(results);
+	});
 })

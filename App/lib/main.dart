@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http; 
 
 void main() {
   runApp(MyApp());
@@ -10,7 +11,27 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  bool _isPlaying = true;
   bool _selected = false;
+  
+  _handlePlay() async {
+    String url = "";
+    if(!_isPlaying){
+      url = "http://192.168.43.94:5022/play"; 
+    }else{
+      url = "http://192.168.43.94:5022/pause"; 
+    }
+    
+    final response = await http.get(url); 
+    setState((){
+      _isPlaying = !_isPlaying;
+    });
+  
+    //var responseData = json.decode(response.body); 
+    
+  }
+  
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -92,7 +113,7 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       IconButton(onPressed: (){}, icon: Icon(Icons.fast_rewind ), color: Colors.white, iconSize: 34.0),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.pause ), color: Colors.white, iconSize: 34.0),
+                      IconButton(onPressed: (){ _handlePlay(); }, icon: !_isPlaying ? Icon(Icons.chevron_right ) : Icon(Icons.pause ), color: Colors.white, iconSize: 34.0),
                       IconButton(onPressed: (){}, icon: Icon(Icons.fast_forward ), color: Colors.white, iconSize: 34.0),
                     ],
                   ),
