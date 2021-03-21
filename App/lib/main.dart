@@ -1,10 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http; 
+import 'package:http/http.dart' as http;
 import 'package:prompt_dialog/prompt_dialog.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Main());
 }
+
+class Main extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+     return MaterialApp(
+      title: 'Flutter Remote',
+      theme: ThemeData(
+        primarySwatch: Colors.grey,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Colors.grey[900],
+      ),
+      debugShowCheckedModeBanner: false,
+      home: MyApp(),
+      );
+  } 
+}
+
 
 class MyApp extends StatefulWidget {
   @override
@@ -17,102 +34,94 @@ class _MyAppState extends State<MyApp> {
   String currentIP = "192.168.8.102";
   String currentPORT = "5022";
   bool _muteMusicSelected = false;
-  
+
   _handlePlay() async {
     String url = "";
     if(!_isPlaying){
-      url = "http://${currentIP}:${currentPORT}/play"; 
+      url = "http://${currentIP}:${currentPORT}/play";
     }else{
-      url = "http://${currentIP}:${currentPORT}/pause"; 
+      url = "http://${currentIP}:${currentPORT}/pause";
     }
-    
-    final response = await http.get(url); 
+
+    final response = await http.get(url);
     setState((){
       _isPlaying = !_isPlaying;
     });
-  
-    //var responseData = json.decode(response.body); 
-    
+
+    //var responseData = json.decode(response.body);
+
   }
-  
+
   _volumnIncrease() async {
-    String url = "http://${currentIP}:${currentPORT}/increasevolumn"; 
+    String url = "http://${currentIP}:${currentPORT}/increasevolumn";
 
-    final response = await http.get(url); 
+    final response = await http.get(url);
   }
-  
+
   _volumnDecrease() async {
-    String url = "http://${currentIP}:${currentPORT}/decreasevolumn"; 
+    String url = "http://${currentIP}:${currentPORT}/decreasevolumn";
 
-    final response = await http.get(url); 
+    final response = await http.get(url);
   }
-  
+
   _putspleep() async {
-    String url = "http://${currentIP}:${currentPORT}/sleep"; 
+    String url = "http://${currentIP}:${currentPORT}/sleep";
 
-    final response = await http.get(url); 
+    final response = await http.get(url);
   }
-  
+
    _shutdown() async {
-    String url = "http://${currentIP}:${currentPORT}/pweroff"; 
+    String url = "http://${currentIP}:${currentPORT}/pweroff";
 
-    final response = await http.get(url); 
+    final response = await http.get(url);
   }
-  
+
   _nextMedia() async {
-    String url = "http://${currentIP}:${currentPORT}/playnext"; 
+    String url = "http://${currentIP}:${currentPORT}/playnext";
 
-    final response = await http.get(url); 
+    final response = await http.get(url);
   }
-  
+
   _previousMedia() async {
-    String url = "http://${currentIP}:${currentPORT}/playprevious"; 
+    String url = "http://${currentIP}:${currentPORT}/playprevious";
 
-    final response = await http.get(url); 
+    final response = await http.get(url);
   }
-  
+
    _fastfoward() async {
-    String url = "http://${currentIP}:${currentPORT}/fastfaward"; 
+    String url = "http://${currentIP}:${currentPORT}/fastfaward";
 
-    final response = await http.get(url); 
+    final response = await http.get(url);
   }
-  
+
   _fastbackward() async {
-    String url = "http://${currentIP}:${currentPORT}/fastbackward"; 
+    String url = "http://${currentIP}:${currentPORT}/fastbackward";
 
-    final response = await http.get(url); 
+    final response = await http.get(url);
   }
-  
+
   _togglemute() async {
     String url = "";
     if(!_muteMusicSelected){
-      url = "http://${currentIP}:${currentPORT}/mute"; 
+      url = "http://${currentIP}:${currentPORT}/mute";
     }else{
-      url = "http://${currentIP}:${currentPORT}/unmute"; 
+      url = "http://${currentIP}:${currentPORT}/unmute";
     }
-    
 
-    final response = await http.get(url); 
+
+    final response = await http.get(url);
     setState((){ _muteMusicSelected = !_muteMusicSelected;});
   }
-  
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Remote',
-      theme: ThemeData(
-        primarySwatch: Colors.grey,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        scaffoldBackgroundColor: Colors.grey[900],
-      ),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-
+    return Scaffold(
+   	resizeToAvoidBottomPadding: false,
         body: Center(
           child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: ExactAssetImage("assets/38618.jpg"),
+                  image: ExactAssetImage("assets/24866.jpg"),
                   fit: BoxFit.cover
               ),
             ),
@@ -138,7 +147,7 @@ class _MyAppState extends State<MyApp> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text('VOLUMN', style: TextStyle(color: Colors.white),),
+                      Text('VOLUMN', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                       Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -153,7 +162,7 @@ class _MyAppState extends State<MyApp> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text('BRIGHTNESS', style: TextStyle(color: Colors.white),),
+                      Text('BRIGHTNESS', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                       Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -205,18 +214,28 @@ class _MyAppState extends State<MyApp> {
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                  IconButton(onPressed: (){ _togglemute(); }, icon: Icon(Icons.music_off ), color: _muteMusicSelected ? Colors.red : Colors.white, iconSize: 30.0),
-                  IconButton(onPressed: (){}, icon: Icon(Icons.headset ), color: Colors.white, iconSize: 30.0),
-                  IconButton(onPressed: (){}, icon: Icon(Icons.settings_rounded ), color: Colors.white, iconSize: 30.0),
-                  ]),
-                ),
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                    IconButton(onPressed: (){ _togglemute(); }, icon: Icon(Icons.music_off ), color: _muteMusicSelected ? Colors.red : Colors.white, iconSize: 30.0),
+                    IconButton(onPressed: () async {
+                      String ip = await prompt(context);
+		      setState((){
+		      	currentIP = ip;
+		      });
+                    }, icon: Icon(Icons.headset ), color: Colors.white, iconSize: 30.0),
+                    IconButton(onPressed: () async {
+                      String ip = await prompt(context, title: Text('Enter host machine IP'),);
+		      setState((){
+		      	currentIP = ip;
+		      });
+                    },  icon: Icon(Icons.settings_rounded ), color: Colors.white, iconSize: 30.0),
+                    ]),
+                  ),
               ],
             ),
           ),
         ),
-      ),
-    );
+      );
+
   }
 }
