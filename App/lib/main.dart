@@ -51,8 +51,9 @@ class _MyAppState extends State<MyApp> {
                       Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.remove_circle), label: Text('Down')),
-                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.add_circle), label: Text('Up')),]),
+                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.remove_circle, color: Colors.red,), label: Text('Down')),
+                      Text(' '),
+                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.add_circle, color: Colors.green,), label: Text('Up')),]),
                     ],
                   ),
                 ),
@@ -65,8 +66,9 @@ class _MyAppState extends State<MyApp> {
                       Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.remove_circle), label: Text('Down')),
-                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.add_circle), label: Text('Up')),]),
+                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.remove_circle, color: Colors.red,), label: Text('Down')),
+                      Text(' '),
+                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.add_circle, color: Colors.green,), label: Text('Up')),]),
                     ],
                   ),
                 ),
@@ -80,18 +82,18 @@ class _MyAppState extends State<MyApp> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.skip_next), label: Text('')),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.skip_next ), color: Colors.white, iconSize: 34.0),
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(45.0,5,45.0,0),
+                  padding: const EdgeInsets.fromLTRB(75.0,5,75.0,0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.fast_rewind ), label: Text('')),
-                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.pause ), label: Text('')),
-                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.fast_forward ), label: Text('')),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.fast_rewind ), color: Colors.white, iconSize: 34.0),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.pause ), color: Colors.white, iconSize: 34.0),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.fast_forward ), color: Colors.white, iconSize: 34.0),
                     ],
                   ),
                 ),
@@ -100,7 +102,7 @@ class _MyAppState extends State<MyApp> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.skip_previous_sharp), label: Text('')),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.skip_previous_sharp ), color: Colors.white, iconSize: 34.0),
                     ],
                   ),
                 ),
@@ -114,9 +116,9 @@ class _MyAppState extends State<MyApp> {
                   child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                  RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.music_off), label: Text('')),
-                  RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.headset ), label: Text('')),
-                  RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.settings_rounded), label: Text('')),
+                  IconButton(onPressed: (){}, icon: Icon(Icons.music_off ), color: Colors.white, iconSize: 30.0),
+                  IconButton(onPressed: (){}, icon: Icon(Icons.headset ), color: Colors.white, iconSize: 30.0),
+                  IconButton(onPressed: (){}, icon: Icon(Icons.settings_rounded ), color: Colors.white, iconSize: 30.0),
                   ]),
                 ),
               ],
