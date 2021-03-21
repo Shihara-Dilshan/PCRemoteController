@@ -91,3 +91,21 @@ app.get( '/playprevious', (req, res) => {
 });
 
 
+app.get( '/mute', (req, res) => {
+	PythonShell.run('scripts/mute.py', null, function (err, results) {
+	  if (err) throw err;
+	  // results is an array consisting of messages collected during execution
+	     res.send(results);
+	});
+});
+
+
+app.get( '/unmute', (req, res) => {
+	PythonShell.run('scripts/unmute.py', null, function (err, results) {
+	  if (err) throw err;
+	  // results is an array consisting of messages collected during execution
+	     res.send(results);
+	});
+});
+
+

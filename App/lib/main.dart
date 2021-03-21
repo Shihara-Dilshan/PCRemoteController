@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http; 
+import 'package:prompt_dialog/prompt_dialog.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,6 +16,7 @@ class _MyAppState extends State<MyApp> {
   bool _selected = false;
   String currentIP = "192.168.43.94";
   String currentPORT = "5022";
+  bool _muteMusicSelected = true;
   
   _handlePlay() async {
     String url = "";
@@ -79,6 +81,19 @@ class _MyAppState extends State<MyApp> {
     String url = "http://${currentIP}:${currentPORT}/fastbackward"; 
 
     final response = await http.get(url); 
+  }
+  
+  _togglemute() async {
+    String url = "";
+    if(!_muteMusicSelected){
+      url = "http://${currentIP}:${currentPORT}/mute"; 
+    }else{
+      url = "http://${currentIP}:${currentPORT}/unmute"; 
+    }
+    
+
+    final response = await http.get(url); 
+    setState((){ _muteMusicSelected = !_muteMusicSelected;});
   }
   
   @override
@@ -186,7 +201,7 @@ class _MyAppState extends State<MyApp> {
                   child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                  IconButton(onPressed: (){}, icon: Icon(Icons.music_off ), color: Colors.white, iconSize: 30.0),
+                  IconButton(onPressed: (){ _togglemute(); }, icon: Icon(Icons.music_off ), color: _muteMusicSelected ? Colors.red : Colors.white, iconSize: 30.0),
                   IconButton(onPressed: (){}, icon: Icon(Icons.headset ), color: Colors.white, iconSize: 30.0),
                   IconButton(onPressed: (){}, icon: Icon(Icons.settings_rounded ), color: Colors.white, iconSize: 30.0),
                   ]),
