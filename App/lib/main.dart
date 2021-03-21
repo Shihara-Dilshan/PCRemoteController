@@ -14,9 +14,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool _isPlaying = true;
   bool _selected = false;
-  String currentIP = "192.168.43.94";
+  String currentIP = "192.168.8.102";
   String currentPORT = "5022";
-  bool _muteMusicSelected = true;
+  bool _muteMusicSelected = false;
   
   _handlePlay() async {
     String url = "";
@@ -110,6 +110,12 @@ class _MyAppState extends State<MyApp> {
 
         body: Center(
           child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: ExactAssetImage("assets/38618.jpg"),
+                  fit: BoxFit.cover
+              ),
+            ),
             child: Column(
               children: <Widget>[
                 Padding(
@@ -117,8 +123,8 @@ class _MyAppState extends State<MyApp> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      RaisedButton.icon(onPressed: (){ _putspleep(); }, icon: Icon(Icons.airline_seat_individual_suite_rounded), label: Text('Sleep')),
-                      RaisedButton.icon(onPressed: (){ _shutdown(); }, icon: Icon(Icons.power_off ), label: Text('Power Off'), color: _selected ? Colors.red : Colors.white,),
+                      RaisedButton.icon(onPressed: (){ _putspleep(); }, icon: Icon(Icons.airline_seat_individual_suite_rounded, color: Colors.white,), label: Text('Sleep', style: TextStyle(color: Colors.white),), color: Colors.red.withOpacity(0.05)),
+                      RaisedButton.icon(onPressed: (){ _shutdown(); }, icon: Icon(Icons.power_off, color: Colors.white, ), label: Text('Power Off', style: TextStyle(color: Colors.white),), color: Colors.red.withOpacity(0.05)),
                     ],
                   ),
                 ),
@@ -136,9 +142,9 @@ class _MyAppState extends State<MyApp> {
                       Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                      RaisedButton.icon(onPressed: (){ _volumnDecrease(); }, icon: Icon(Icons.remove_circle, color: Colors.red,), label: Text('Down')),
+                      RaisedButton.icon(onPressed: (){ _volumnDecrease(); }, icon: Icon(Icons.remove_circle, color: Colors.white,), label: Text('Down', style: TextStyle(color: Colors.white),), color: Colors.red.withOpacity(0.05)),
                       Text(' '),
-                      RaisedButton.icon(onPressed: (){ _volumnIncrease(); }, icon: Icon(Icons.add_circle, color: Colors.green,), label: Text('Up')),]),
+                      RaisedButton.icon(onPressed: (){ _volumnIncrease(); }, icon: Icon(Icons.add_circle, color: Colors.white,), label: Text('Up', style: TextStyle(color: Colors.white),), color: Colors.red.withOpacity(0.05)),]),
                     ],
                   ),
                 ),
@@ -151,9 +157,9 @@ class _MyAppState extends State<MyApp> {
                       Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.remove_circle, color: Colors.red,), label: Text('Down')),
+                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.remove_circle, color: Colors.white,), label: Text('Down', style: TextStyle(color: Colors.white),), color: Colors.red.withOpacity(0.05)),
                       Text(' '),
-                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.add_circle, color: Colors.green,), label: Text('Up')),]),
+                      RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.add_circle, color: Colors.white,), label: Text('Up', style: TextStyle(color: Colors.white),), color: Colors.red.withOpacity(0.05)),]),
                     ],
                   ),
                 ),
@@ -172,7 +178,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(75.0,5,75.0,0),
+                  padding: const EdgeInsets.fromLTRB(85.0,5,85.0,0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
