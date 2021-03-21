@@ -57,6 +57,29 @@ class _MyAppState extends State<MyApp> {
     final response = await http.get(url); 
   }
   
+  _nextMedia() async {
+    String url = "http://${currentIP}:${currentPORT}/playnext"; 
+
+    final response = await http.get(url); 
+  }
+  
+  _previousMedia() async {
+    String url = "http://${currentIP}:${currentPORT}/playprevious"; 
+
+    final response = await http.get(url); 
+  }
+  
+   _fastfoward() async {
+    String url = "http://${currentIP}:${currentPORT}/fastfaward"; 
+
+    final response = await http.get(url); 
+  }
+  
+  _fastbackward() async {
+    String url = "http://${currentIP}:${currentPORT}/fastbackward"; 
+
+    final response = await http.get(url); 
+  }
   
   @override
   Widget build(BuildContext context) {
@@ -129,7 +152,7 @@ class _MyAppState extends State<MyApp> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      IconButton(onPressed: (){}, icon: Icon(Icons.skip_next ), color: Colors.white, iconSize: 34.0),
+                      IconButton(onPressed: (){_nextMedia();}, icon: Icon(Icons.skip_next ), color: Colors.white, iconSize: 34.0),
                     ],
                   ),
                 ),
@@ -138,9 +161,9 @@ class _MyAppState extends State<MyApp> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      IconButton(onPressed: (){}, icon: Icon(Icons.fast_rewind ), color: Colors.white, iconSize: 34.0),
+                      IconButton(onPressed: (){ _fastbackward(); }, icon: Icon(Icons.fast_rewind ), color: Colors.white, iconSize: 34.0),
                       IconButton(onPressed: (){ _handlePlay(); }, icon: !_isPlaying ? Icon(Icons.chevron_right ) : Icon(Icons.pause ), color: Colors.white, iconSize: 34.0),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.fast_forward ), color: Colors.white, iconSize: 34.0),
+                      IconButton(onPressed: (){ _fastfoward(); }, icon: Icon(Icons.fast_forward ), color: Colors.white, iconSize: 34.0),
                     ],
                   ),
                 ),
@@ -149,7 +172,7 @@ class _MyAppState extends State<MyApp> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      IconButton(onPressed: (){}, icon: Icon(Icons.skip_previous_sharp ), color: Colors.white, iconSize: 34.0),
+                      IconButton(onPressed: (){ _previousMedia(); }, icon: Icon(Icons.skip_previous_sharp ), color: Colors.white, iconSize: 34.0),
                     ],
                   ),
                 ),

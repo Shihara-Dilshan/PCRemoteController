@@ -40,6 +40,21 @@ app.get( '/pause', (req, res) => {
 	});
 });
 
+app.get( '/fastfaward', (req, res) => {
+	PythonShell.run('scripts/fastfoward.py', null, function (err, results) {
+	  if (err) throw err;
+	  // results is an array consisting of messages collected during execution
+	     res.send(results);
+	});
+});
+
+app.get( '/fastbackward', (req, res) => {
+	PythonShell.run('scripts/fastbackward.py', null, function (err, results) {
+	  if (err) throw err;
+	  // results is an array consisting of messages collected during execution
+	     res.send(results);
+	});
+});
 
 app.get( '/increasevolumn', (req, res) => {
 	PythonShell.run('scripts/increase.py', null, function (err, results) {
@@ -57,3 +72,22 @@ app.get( '/decreasevolumn', (req, res) => {
 	     res.send(results);
 	});
 });
+
+app.get( '/playnext', (req, res) => {
+	PythonShell.run('scripts/playnext.py', null, function (err, results) {
+	  if (err) throw err;
+	  // results is an array consisting of messages collected during execution
+	     res.send(results);
+	});
+});
+
+
+app.get( '/playprevious', (req, res) => {
+	PythonShell.run('scripts/playprevious.py', null, function (err, results) {
+	  if (err) throw err;
+	  // results is an array consisting of messages collected during execution
+	     res.send(results);
+	});
+});
+
+
