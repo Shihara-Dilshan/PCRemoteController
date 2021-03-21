@@ -7,6 +7,22 @@ app.listen(PORT, () => {
     console.log('Server has started');
 });
 
+app.get( '/sleep', (req, res) => {
+	PythonShell.run('scripts/sleep.py', null, function (err, results) {
+	  if (err) throw err;
+	  // results is an array consisting of messages collected during execution
+	     res.send(results);
+	});
+});
+
+app.get( '/pweroff', (req, res) => {
+	PythonShell.run('scripts/pweroff.py', null, function (err, results) {
+	  if (err) throw err;
+	  // results is an array consisting of messages collected during execution
+	     res.send(results);
+	});
+});
+
 app.get( '/play', (req, res) => {
 	PythonShell.run('scripts/play.py', null, function (err, results) {
 	  if (err) throw err;
@@ -22,4 +38,22 @@ app.get( '/pause', (req, res) => {
 	  // results is an array consisting of messages collected during execution
 	     res.send(results);
 	});
-})
+});
+
+
+app.get( '/increasevolumn', (req, res) => {
+	PythonShell.run('scripts/increase.py', null, function (err, results) {
+	  if (err) throw err;
+	  // results is an array consisting of messages collected during execution
+	     res.send(results);
+	});
+});
+
+
+app.get( '/decreasevolumn', (req, res) => {
+	PythonShell.run('scripts/decreasevolumn.py', null, function (err, results) {
+	  if (err) throw err;
+	  // results is an array consisting of messages collected during execution
+	     res.send(results);
+	});
+});
