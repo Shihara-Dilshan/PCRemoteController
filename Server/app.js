@@ -10,7 +10,7 @@ app.listen(PORT, () => {
 app.get( '/sleep', (req, res) => {
 	PythonShell.run('scripts/sleep.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Put PC into sleep");
 	     res.send(results);
 	});
 });
@@ -18,7 +18,7 @@ app.get( '/sleep', (req, res) => {
 app.get( '/pweroff', (req, res) => {
 	PythonShell.run('scripts/pweroff.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Power off the PC");
 	     res.send(results);
 	});
 });
@@ -26,7 +26,7 @@ app.get( '/pweroff', (req, res) => {
 app.get( '/play', (req, res) => {
 	PythonShell.run('scripts/play.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Play current media");
 	     res.send(results);
 	});
 });
@@ -35,7 +35,7 @@ app.get( '/play', (req, res) => {
 app.get( '/pause', (req, res) => {
 	PythonShell.run('scripts/pause.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Pause current media");
 	     res.send(results);
 	});
 });
@@ -43,7 +43,7 @@ app.get( '/pause', (req, res) => {
 app.get( '/fastfaward', (req, res) => {
 	PythonShell.run('scripts/fastfoward.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Fast forward current media");
 	     res.send(results);
 	});
 });
@@ -51,7 +51,7 @@ app.get( '/fastfaward', (req, res) => {
 app.get( '/fastbackward', (req, res) => {
 	PythonShell.run('scripts/fastbackward.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Fast backward current media");
 	     res.send(results);
 	});
 });
@@ -59,7 +59,7 @@ app.get( '/fastbackward', (req, res) => {
 app.get( '/increasevolumn', (req, res) => {
 	PythonShell.run('scripts/increase.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Increase volumn");
 	     res.send(results);
 	});
 });
@@ -68,7 +68,7 @@ app.get( '/increasevolumn', (req, res) => {
 app.get( '/decreasevolumn', (req, res) => {
 	PythonShell.run('scripts/decreasevolumn.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Decrease volumn");
 	     res.send(results);
 	});
 });
@@ -76,7 +76,7 @@ app.get( '/decreasevolumn', (req, res) => {
 app.get( '/playnext', (req, res) => {
 	PythonShell.run('scripts/playnext.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Skip current media to next media");
 	     res.send(results);
 	});
 });
@@ -85,7 +85,7 @@ app.get( '/playnext', (req, res) => {
 app.get( '/playprevious', (req, res) => {
 	PythonShell.run('scripts/playprevious.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Skip current media to previous media");
 	     res.send(results);
 	});
 });
@@ -94,7 +94,7 @@ app.get( '/playprevious', (req, res) => {
 app.get( '/mute', (req, res) => {
 	PythonShell.run('scripts/mute.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Mute the PC sounds");
 	     res.send(results);
 	});
 });
@@ -103,7 +103,7 @@ app.get( '/mute', (req, res) => {
 app.get( '/unmute', (req, res) => {
 	PythonShell.run('scripts/unmute.py', null, function (err, results) {
 	  if (err) throw err;
-	  // results is an array consisting of messages collected during execution
+	     console.log("Unmute the PC sounds");
 	     res.send(results);
 	});
 });
