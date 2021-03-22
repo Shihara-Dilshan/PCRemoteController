@@ -19,22 +19,22 @@ git clone https://github.com/Shihara-Dilshan/PCRemoteController.git
 
 ## !!!!IMPORTANT!!!!
 
-1.ONLY WORKS IN LINUX BASED OS WITH ROOT PRIVILADGES.
-2.This project was build with help some linux packages. Without those packages are installed. This application does not work.
-  a.amixer - ```bash apt-get install alsa-utils```
-  b.playerctl - ```bash wget http://ftp.nl.debian.org/debian/pool/main/p/playerctl/libplayerctl2_2.0.1-1_amd64.deb```
-  		```bash wget http://ftp.nl.debian.org/debian/pool/main/p/playerctl/playerctl_2.0.1-1_amd64.deb```
-		```bash sudo dpkg -i libplayerctl2_2.0.1-1_amd64.deb playerctl_2.0.1-1_amd64.deb```
-3.Need flutter SDK and Node Js pre Installed		
+1.ONLY WORKS IN LINUX BASED OS WITH ROOT PRIVILADGES.<br />
+2.This project was build with help some linux packages. Without those packages are installed. This application does not work.<br />
+  a.amixer - ```bash apt-get install alsa-utils```<br />
+  b.playerctl - ```bash wget http://ftp.nl.debian.org/debian/pool/main/p/playerctl/libplayerctl2_2.0.1-1_amd64.deb```<br />
+  		```bash wget http://ftp.nl.debian.org/debian/pool/main/p/playerctl/playerctl_2.0.1-1_amd64.deb```<br />
+		```bash sudo dpkg -i libplayerctl2_2.0.1-1_amd64.deb playerctl_2.0.1-1_amd64.deb```<br />
+3.Need flutter SDK and Node Js pre Installed<br />		
 
-After cloning, 
-	1.Go to the App folder and hit ```bash flutter pub get``` then ```bash flutter run```
-	2.Go to the Server folder and hit ```bash Npm install``` then ```npm start```
+After cloning, <br />
+	1.Go to the App folder and hit ```bash flutter pub get``` then ```bash flutter run```<br />
+	2.Go to the Server folder and hit ```bash Npm install``` then ```npm start```<br />
 
 
 ## Controlling the PC
 
-1.Controll PC and the mobile app should belong to the same local area network
+1.Controll PC and the mobile app should belong to the same local area network<br />
 2.Add your pc ip address in mobile app's settings menu.
  
 ## Maintainers
